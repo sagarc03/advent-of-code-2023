@@ -4,6 +4,11 @@ https://adventofcode.com/
 
 This project uses [Python Poetry](https://python-poetry.org/).
 
+## Setup
+
+```
+poetry install
+```
 
 ## Running for DAY X PART X
 
