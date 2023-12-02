@@ -40,3 +40,187 @@ def day2_part2(file_name: str = "data/day2.txt") -> None:
             game_data = process_game_data(line.strip())
             result += get_power_set(game_data[1])
     print("Result for day2 part2: ", result)
+
+
+def day3_part1(file_name: str = "data/day3.txt") -> None:
+    ...
+
+
+def day3_part2(file_name: str = "data/day3.txt") -> None:
+    ...
+
+
+def day4_part1(file_name: str = "data/day4.txt") -> None:
+    ...
+
+
+def day4_part2(file_name: str = "data/day4.txt") -> None:
+    ...
+
+
+def day5_part1(file_name: str = "data/day5.txt") -> None:
+    ...
+
+
+def day5_part2(file_name: str = "data/day5.txt") -> None:
+    ...
+
+
+def day6_part1(file_name: str = "data/day6.txt") -> None:
+    ...
+
+
+def day6_part2(file_name: str = "data/day6.txt") -> None:
+    ...
+
+
+def day7_part1(file_name: str = "data/day7.txt") -> None:
+    ...
+
+
+def day7_part2(file_name: str = "data/day7.txt") -> None:
+    ...
+
+
+def day8_part1(file_name: str = "data/day8.txt") -> None:
+    ...
+
+
+def day8_part2(file_name: str = "data/day8.txt") -> None:
+    ...
+
+
+def day9_part1(file_name: str = "data/day9.txt") -> None:
+    ...
+
+
+def day9_part2(file_name: str = "data/day9.txt") -> None:
+    ...
+
+
+def day10_part1(file_name: str = "data/day10.txt") -> None:
+    ...
+
+
+def day10_part2(file_name: str = "data/day10.txt") -> None:
+    ...
+
+
+def day11_part1(file_name: str = "data/day11.txt") -> None:
+    ...
+
+
+def day11_part2(file_name: str = "data/day11.txt") -> None:
+    ...
+
+
+def day12_part1(file_name: str = "data/day12.txt") -> None:
+    ...
+
+
+def day12_part2(file_name: str = "data/day12.txt") -> None:
+    ...
+
+
+def day13_part1(file_name: str = "data/day13.txt") -> None:
+    ...
+
+
+def day13_part2(file_name: str = "data/day13.txt") -> None:
+    ...
+
+
+def day14_part1(file_name: str = "data/day14.txt") -> None:
+    ...
+
+
+def day14_part2(file_name: str = "data/day14.txt") -> None:
+    ...
+
+
+def day15_part1(file_name: str = "data/day15.txt") -> None:
+    ...
+
+
+def day15_part2(file_name: str = "data/day15.txt") -> None:
+    ...
+
+
+def day16_part1(file_name: str = "data/day16.txt") -> None:
+    ...
+
+
+def day16_part2(file_name: str = "data/day16.txt") -> None:
+    ...
+
+
+def day17_part1(file_name: str = "data/day17.txt") -> None:
+    ...
+
+
+def day17_part2(file_name: str = "data/day17.txt") -> None:
+    ...
+
+
+def day18_part1(file_name: str = "data/day18.txt") -> None:
+    ...
+
+
+def day18_part2(file_name: str = "data/day18.txt") -> None:
+    ...
+
+
+def day19_part1(file_name: str = "data/day19.txt") -> None:
+    ...
+
+
+def day19_part2(file_name: str = "data/day19.txt") -> None:
+    ...
+
+
+def day20_part1(file_name: str = "data/day20.txt") -> None:
+    ...
+
+
+def day20_part2(file_name: str = "data/day20.txt") -> None:
+    ...
+
+
+def day21_part1(file_name: str = "data/day21.txt") -> None:
+    ...
+
+
+def day21_part2(file_name: str = "data/day21.txt") -> None:
+    ...
+
+
+def day22_part1(file_name: str = "data/day22.txt") -> None:
+    ...
+
+
+def day22_part2(file_name: str = "data/day22.txt") -> None:
+    ...
+
+
+def day23_part1(file_name: str = "data/day23.txt") -> None:
+    ...
+
+
+def day23_part2(file_name: str = "data/day23.txt") -> None:
+    ...
+
+
+def day24_part1(file_name: str = "data/day24.txt") -> None:
+    ...
+
+
+def day24_part2(file_name: str = "data/day24.txt") -> None:
+    ...
+
+
+def day25_part1(file_name: str = "data/day25.txt") -> None:
+    ...
+
+
+def day25_part2(file_name: str = "data/day25.txt") -> None:
+    ...
