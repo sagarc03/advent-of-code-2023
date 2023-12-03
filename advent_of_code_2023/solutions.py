@@ -2,6 +2,7 @@ from collections import defaultdict
 
 from .day1 import decode_calibration_value_part_1, decode_calibration_value_part_2
 from .day2 import get_power_set, is_game_possible, process_game_data
+from .day3 import get_valid_gear_ratio, get_valid_numbers
 
 
 def day1_part1(file_name: str = "data/day1.txt") -> None:
@@ -43,11 +44,17 @@ def day2_part2(file_name: str = "data/day2.txt") -> None:
 
 
 def day3_part1(file_name: str = "data/day3.txt") -> None:
-    ...
+    result = 0
+    with open(file_name, "r") as file:
+        result += sum(get_valid_numbers([x.strip() for x in file.readlines()]))
+    print("Result for day3 part1: ", result)
 
 
 def day3_part2(file_name: str = "data/day3.txt") -> None:
-    ...
+    result = 0
+    with open(file_name, "r") as file:
+        result += sum(get_valid_gear_ratio([x.strip() for x in file.readlines()]))
+    print("Result for day3 part2: ", result)
 
 
 def day4_part1(file_name: str = "data/day4.txt") -> None:
