@@ -3,6 +3,7 @@ from collections import defaultdict
 from .day1 import decode_calibration_value_part_1, decode_calibration_value_part_2
 from .day2 import get_power_set, is_game_possible, process_game_data
 from .day3 import get_valid_gear_ratio, get_valid_numbers
+from .day4 import count_points_in_card, number_cards_won, parse_card
 
 
 def day1_part1(file_name: str = "data/day1.txt") -> None:
@@ -58,11 +59,24 @@ def day3_part2(file_name: str = "data/day3.txt") -> None:
 
 
 def day4_part1(file_name: str = "data/day4.txt") -> None:
-    ...
+    result = 0
+    with open(file_name, "r") as file:
+        for line in file:
+            result += count_points_in_card(line.strip())
+    print("Result for day4 part1: ", result)
 
 
 def day4_part2(file_name: str = "data/day4.txt") -> None:
-    ...
+    store = defaultdict(int)
+    with open(file_name, "r") as file:
+        for line in file:
+            card, winning_numbers, card_numbers = parse_card(line.strip())
+            cards_won = number_cards_won(winning_numbers, card_numbers)
+            store[card] += 1
+            for i in range(1, cards_won + 1):
+                store[card + i] += store[card]
+
+    print("Result for day4 part1: ", sum(store.values()))
 
 
 def day5_part1(file_name: str = "data/day5.txt") -> None:
