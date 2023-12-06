@@ -1,4 +1,4 @@
-from typing import Iterable, LiteralString, NamedTuple, Self
+from typing import LiteralString, NamedTuple
 
 
 def get_seeds(seeds: str) -> list[int]:

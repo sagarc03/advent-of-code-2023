@@ -2,7 +2,10 @@ def get_valid_numbers(string_mat: list[str]) -> list[int]:
     n = len(string_mat)
     m = len(string_mat[0])
     visited = set()
-    isValid = lambda r, c: r >= 0 and r < n and c >= 0 and c < m
+
+    def isValid(r: int, c: int) -> bool:
+        return r >= 0 and r < n and c >= 0 and c < m
+
     direction = [(-1, -1), (-1, 0), (-1, 1), (0, 1), (1, 1), (1, 0), (1, -1), (0, -1)]
     result = []
 
@@ -41,7 +44,10 @@ def get_valid_gear_ratio(string_mat: list[str]) -> list[int]:
     n = len(string_mat)
     m = len(string_mat[0])
     visited = set()
-    isValid = lambda r, c: r >= 0 and r < n and c >= 0 and c < m
+
+    def isValid(r: int, c: int) -> bool:
+        return r >= 0 and r < n and c >= 0 and c < m
+
     direction = [(-1, -1), (-1, 0), (-1, 1), (0, 1), (1, 1), (1, 0), (1, -1), (0, -1)]
     result = []
 
