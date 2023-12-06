@@ -4,6 +4,7 @@ from .day1 import decode_calibration_value_part_1, decode_calibration_value_part
 from .day2 import get_power_set, is_game_possible, process_game_data
 from .day3 import get_valid_gear_ratio, get_valid_numbers
 from .day4 import count_points_in_card, number_cards_won, parse_card
+from .day5 import get_maps, get_seeds, get_seeds_interval
 
 
 def day1_part1(file_name: str = "data/day1.txt") -> None:
@@ -80,11 +81,34 @@ def day4_part2(file_name: str = "data/day4.txt") -> None:
 
 
 def day5_part1(file_name: str = "data/day5.txt") -> None:
-    ...
+    with open(file_name, "r") as file:
+        data = file.read()
+        seeds = get_seeds(data.split("\n\n")[0])
+        maps = get_maps(data.split("\n\n")[1:])
+
+        result = []
+        for seed in seeds:
+            for map in maps:
+                seed = map.apply_for_value(seed)
+            result.append(seed)
+
+    print("Result for day5 part1: ", min(result))
 
 
 def day5_part2(file_name: str = "data/day5.txt") -> None:
-    ...
+    with open(file_name, "r") as file:
+        data = file.read()
+        seeds = get_seeds_interval(data.split("\n\n")[0])
+        maps = get_maps(data.split("\n\n")[1:])
+
+        result = []
+        for seed in seeds:
+            temp = [seed]
+            for map in maps:
+                temp = map.apply_for_ranges(temp)
+            result.append(min(temp)[0])
+
+    print("Result for day5 part2: ", min(result))
 
 
 def day6_part1(file_name: str = "data/day6.txt") -> None:
