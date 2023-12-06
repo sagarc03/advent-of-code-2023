@@ -5,6 +5,7 @@ from .day2 import get_power_set, is_game_possible, process_game_data
 from .day3 import get_valid_gear_ratio, get_valid_numbers
 from .day4 import count_points_in_card, number_cards_won, parse_card
 from .day5 import get_maps, get_seeds, get_seeds_interval
+from .day6 import number_of_ways_to_beat_binary_search
 
 
 def day1_part1(file_name: str = "data/day1.txt") -> None:
@@ -112,11 +113,24 @@ def day5_part2(file_name: str = "data/day5.txt") -> None:
 
 
 def day6_part1(file_name: str = "data/day6.txt") -> None:
-    ...
+    with open(file_name, "r") as file:
+        times = [int(x) for x in file.readline().split(":")[1].strip().split()]
+        durations = [int(x) for x in file.readline().split(":")[1].strip().split()]
+
+    result = 1
+    for t, d in zip(times, durations):
+        result *= number_of_ways_to_beat_binary_search(t, d)
+    print("Result for day6 part1: ", result)
 
 
 def day6_part2(file_name: str = "data/day6.txt") -> None:
-    ...
+    with open(file_name, "r") as file:
+        times = int(file.readline().split(":")[1].replace(" ", ""))
+        durations = int(file.readline().split(":")[1].replace(" ", ""))
+    print(
+        "Result for day6 part2: ",
+        number_of_ways_to_beat_binary_search(times, durations, 14),
+    )
 
 
 def day7_part1(file_name: str = "data/day7.txt") -> None:
