@@ -1,4 +1,5 @@
 from collections import defaultdict
+from math import lcm
 
 from .day1 import decode_calibration_value_part_1, decode_calibration_value_part_2
 from .day2 import get_power_set, is_game_possible, process_game_data
@@ -7,6 +8,7 @@ from .day4 import count_points_in_card, number_cards_won, parse_card
 from .day5 import get_maps, get_seeds, get_seeds_interval
 from .day6 import number_of_ways_to_beat_binary_search
 from .day7 import get_strength, get_strength_with_joker
+from .day8 import get_direction, get_map
 
 
 def day1_part1(file_name: str = "data/day1.txt") -> None:
@@ -165,11 +167,49 @@ def day7_part2(file_name: str = "data/day7.txt") -> None:
 
 
 def day8_part1(file_name: str = "data/day8.txt") -> None:
-    ...
+    node = "AAA"
+    steps = 0
+    with open(file_name, "r") as file:
+        data = file.read()
+        directions = get_direction(data.split("\n\n")[0])
+        map = get_map(data.split("\n\n")[1])
+
+        for direction in directions:
+            if direction == "L":
+                node = map[node][0]
+            else:
+                node = map[node][1]
+            steps += 1
+            if node == "ZZZ":
+                break
+
+    print("Result for day8 part1: ", steps)
 
 
 def day8_part2(file_name: str = "data/day8.txt") -> None:
-    ...
+    steps = 0
+    with open(file_name, "r") as file:
+        data = file.read()
+        directions = get_direction(data.split("\n\n")[0])
+        map = get_map(data.split("\n\n")[1])
+        nodes = [x for x in map.keys() if x.endswith("A")]
+        n = len(nodes)
+        T = {}
+        for direction in directions:
+            if direction == "L":
+                d = 0
+            else:
+                d = 1
+            for i in range(n):
+                nodes[i] = map[nodes[i]][d]
+            steps += 1
+            for i in range(n):
+                if nodes[i].endswith("Z"):
+                    T[i] = steps
+            if len(T) == n:
+                break
+
+    print("Result for day8 part2: ", lcm(*T.values()))
 
 
 def day9_part1(file_name: str = "data/day9.txt") -> None:
