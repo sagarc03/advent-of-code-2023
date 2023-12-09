@@ -6,6 +6,7 @@ from .day3 import get_valid_gear_ratio, get_valid_numbers
 from .day4 import count_points_in_card, number_cards_won, parse_card
 from .day5 import get_maps, get_seeds, get_seeds_interval
 from .day6 import number_of_ways_to_beat_binary_search
+from .day7 import get_strength, get_strength_with_joker
 
 
 def day1_part1(file_name: str = "data/day1.txt") -> None:
@@ -134,11 +135,33 @@ def day6_part2(file_name: str = "data/day6.txt") -> None:
 
 
 def day7_part1(file_name: str = "data/day7.txt") -> None:
-    ...
+    hands: list[tuple[str, int]] = []
+
+    result = 0
+    with open(file_name, "r") as file:
+        for line in file:
+            hand, rank = line.split()
+            hands.append((hand, int(rank)))
+
+    for i, (hand, rank) in enumerate(sorted(hands, key=lambda x: get_strength(x[0]))):
+        result += (i + 1) * rank
+    print("Result for day7 part1: ", result)
 
 
 def day7_part2(file_name: str = "data/day7.txt") -> None:
-    ...
+    hands: list[tuple[str, int]] = []
+
+    result = 0
+    with open(file_name, "r") as file:
+        for line in file:
+            hand, rank = line.split()
+            hands.append((hand, int(rank)))
+
+    for i, (hand, rank) in enumerate(
+        sorted(hands, key=lambda x: get_strength_with_joker(x[0]))
+    ):
+        result += (i + 1) * rank
+    print("Result for day7 part2: ", result)
 
 
 def day8_part1(file_name: str = "data/day8.txt") -> None:
