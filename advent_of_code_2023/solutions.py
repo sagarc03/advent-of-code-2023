@@ -9,6 +9,7 @@ from .day5 import get_maps, get_seeds, get_seeds_interval
 from .day6 import number_of_ways_to_beat_binary_search
 from .day7 import get_strength, get_strength_with_joker
 from .day8 import get_direction, get_map
+from .day9 import extrapolate, extrapolate_backwords
 
 
 def day1_part1(file_name: str = "data/day1.txt") -> None:
@@ -213,11 +214,21 @@ def day8_part2(file_name: str = "data/day8.txt") -> None:
 
 
 def day9_part1(file_name: str = "data/day9.txt") -> None:
-    ...
+    result = 0
+    with open(file_name, "r") as file:
+        for line in file:
+            arr = [int(x.strip()) for x in line.split()]
+            result += extrapolate(arr)
+    print("Result for day9 part1: ", result)
 
 
 def day9_part2(file_name: str = "data/day9.txt") -> None:
-    ...
+    result = 0
+    with open(file_name, "r") as file:
+        for line in file:
+            arr = [int(x.strip()) for x in line.split()]
+            result += extrapolate_backwords(arr)
+    print("Result for day9 part2: ", result)
 
 
 def day10_part1(file_name: str = "data/day10.txt") -> None:
